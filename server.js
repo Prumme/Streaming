@@ -8,8 +8,8 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.htm'))
 });
 
-app.get('/video', function (req, res) {
-    const path = "video.mp4";
+app.get('/video/', function (req, res) {
+    const path = 'video.mp4';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
@@ -62,6 +62,6 @@ app.get('/video', function (req, res) {
     }
 })
 
-app.listen(3000, function () {
+app.listen(3001, function () {
     console.log('Server listening on port 3000.....');
 });
